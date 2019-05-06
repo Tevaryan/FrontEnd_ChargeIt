@@ -1,26 +1,33 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
+import {Route} from "react-router-dom";
+import Homepage from "./containers/Homepage.js"
+import ManageTiming from './containers/ManageTiming'
+import ManageStation from './containers/ManageStation'
+import ManagePump from './containers/ManagePump'
+import MyBookings from "./containers/MyBookings.js"
+import FindStation from "./containers/FindStation.js"
+
+import Home from "./containers/Home.js"
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+class App extends Component {
+
+  render() 
+  {
+    return (
+      <>
+        <Route exact path ={'/'} component={Homepage}/>
+        <Route path ={'/Dashboard/Home'} component={Home}/>
+        <Route path ={'/Dashboard/Map'} component={FindStation}/>
+        <Route path ={'/Dashboard/MyBookings'} component={MyBookings}/>
+        <Route path ={'/Dashboard/Admin/ManageTiming'} component={ManageTiming}/>
+        <Route path ={'/Dashboard/Admin/ManagePump'} component={ManagePump}/>
+        <Route path ={'/Dashboard/Admin/ManageStation'} component={ManageStation}/>
+
+      </>
+    )
+  }
 }
 
 export default App;
