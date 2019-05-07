@@ -71,8 +71,8 @@ class SignUp extends Component {
     return (
         <Form>
             <FormGroup className="m-2">
-                <Label for="exampleEmail">Username</Label>
-                <Input type="text" id="exampleEmail" placeholder="username" onChange={this.nameInputHandler} />
+                <Label for="username">Username</Label>
+                <Input type="text" id="username" placeholder="username" onChange={this.nameInputHandler} />
             </FormGroup>
             <FormGroup className="m-2">
                 <Label for="exampleEmail">Email</Label>
