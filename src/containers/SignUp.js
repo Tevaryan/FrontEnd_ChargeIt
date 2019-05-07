@@ -40,7 +40,6 @@ class SignUp extends Component {
           // debugger  
           axios.post(`https://chargeit.herokuapp.com/users/new`, signupdata)
           .then((response) => {
-            debugger
             localStorage.setItem('username', response.data.user.username)
             localStorage.setItem('user_id', response.data.user.id)
             localStorage.setItem('JWT', response.data.access_token)
