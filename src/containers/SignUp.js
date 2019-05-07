@@ -31,24 +31,28 @@ class SignUp extends Component {
       }
 
       handleSubmit = () =>{
-        const data ={
+        let signupdata ={
             username: this.state.username,
             email: this.state.email,
             password:this.state.password,
           }
-
-          axios.post(`https://chargeit.herokuapp.com/users/new`, data)
+          
+          // debugger  
+          axios.post(`https://chargeit.herokuapp.com/users/new`, signupdata)
           .then((response) => {
+            debugger
             localStorage.setItem('username', response.data.user.username)
             localStorage.setItem('user_id', response.data.user.id)
             localStorage.setItem('JWT', response.data.access_token)
-            this.setState({login:true})
+            // this.setState({login:true})
             if (response.data.user.username != 'admin'){
               this.setState({ 
+                login:true,
                 userlogin: true
               })
             } else if (response.data.user.username === 'admin'){
-              this.setState({ 
+              this.setState({
+                login:true, 
                 adminlogin: true
               })
             }
@@ -68,7 +72,8 @@ class SignUp extends Component {
     else if (this.state.login === true && this.state.adminlogin){
         return <Redirect to='/Dashboard/Admin/ManageStation'/>
       }
-    return (
+    else{
+      return (
         <Form>
             <FormGroup className="m-2">
                 <Label for="username">Username</Label>
@@ -85,6 +90,8 @@ class SignUp extends Component {
             <Button className="m-2" onClick={this.handleSubmit} >Submit</Button>
         </Form>
     )
+     } 
+    
 
   }
 }
