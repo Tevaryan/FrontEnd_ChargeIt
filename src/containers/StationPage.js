@@ -16,7 +16,7 @@ class StationPage extends Component {
     
     componentDidMount() {
           axios( {
-            url: `http://localhost:5000/pumps/show`,
+            url: `https://chargeit.herokuapp.com/pumps/show`,
             method: "get",
           })
           .then((response)=> {

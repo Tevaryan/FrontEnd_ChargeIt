@@ -17,7 +17,7 @@ class MyBookings extends Component {
 
   componentDidMount() {
     axios( {
-      url: `http://localhost:5000/booking/showbookedtiming/${localStorage.user_id}`,
+      url: `https://chargeit.herokuapp.com/booking/showbookedtiming/${localStorage.user_id}`,
       method: "get",
     })
     .then((response)=> {
@@ -33,7 +33,7 @@ class MyBookings extends Component {
 
   CancelBooking = (userid, timings, pumpid, stationid) => {
     axios( {
-      url: `http://localhost:5000/booking/cancelTiming/${userid}/${timings}/${pumpid}/${stationid}`,
+      url: `https://chargeit.herokuapp.com/booking/cancelTiming/${userid}/${timings}/${pumpid}/${stationid}`,
       method: "post",
     })
     .then((response)=> {

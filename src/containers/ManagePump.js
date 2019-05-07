@@ -51,7 +51,7 @@ class ManagePump extends Component {
 
   componentDidMount() {
     axios( {
-        url: `http://localhost:5000/station/show`,
+        url: `https://chargeit.herokuapp.com/station/show`,
         method: "get",
       })
       .then((response)=> {
@@ -67,7 +67,7 @@ class ManagePump extends Component {
   
   storePump = () =>{
     axios( {
-      url: `http://localhost:5000/pumps/${this.state.pump}/${this.state.StationId}`,
+      url: `https://chargeit.herokuapp.com/pumps/${this.state.pump}/${this.state.StationId}`,
       method: "post",
     })
     .then((response)=> {

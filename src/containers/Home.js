@@ -56,7 +56,7 @@ class Home extends Component {
 
     componentDidMount() {
         axios( {
-            url: `http://localhost:5000/booking/show`,
+            url: `https://chargeit.herokuapp.com/booking/show`,
             method: "get",
           })
           .then((response)=> {
@@ -67,7 +67,7 @@ class Home extends Component {
           });
 
           axios( {
-            url: `http://localhost:5000/station/show`,
+            url: `https://chargeit.herokuapp.com/station/show`,
             method: "get",
           })
           .then((response)=> {

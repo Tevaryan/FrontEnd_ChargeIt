@@ -18,7 +18,7 @@ class Distance extends Component{
         //axios.get(`https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins=${this.props.start},DC&destinations=${this.props.destination}&key=AIzaSyABpJnHD8sFlbKFmbQ4wgfTEqat3AjGqY0`, {headers: {"Access-Control-Allow-Origin": "*"}})
         axios({
             method: "post", 
-            url:'http://localhost:5000/getdistance', 
+            url:'https://chargeit.herokuapp.com/getdistance', 
             headers: {
                 "Content-Type": 'application/json'
             },

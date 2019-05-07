@@ -31,7 +31,7 @@ class Timing extends Component {
     
       componentDidMount() {
         axios( {
-            url: `http://localhost:5000/booking/show`,
+            url: `https://chargeit.herokuapp.com/booking/show`,
             method: "get",
           })
           .then((response)=> {
@@ -58,7 +58,7 @@ class Timing extends Component {
 
       handleSubmit = () => {
         axios( {
-          url: `http://localhost:5000/booking/bookTiming/${localStorage.user_id}/${this.state.settiming}/${this.props.port_id}/${this.props.stationid}`,
+          url: `https://chargeit.herokuapp.com/booking/bookTiming/${localStorage.user_id}/${this.state.settiming}/${this.props.port_id}/${this.props.stationid}`,
           method: "post",
         })
         .then((response)=> {

@@ -29,7 +29,7 @@ class Login extends Component {
       username: this.state.username,
       password: this.state.password,
     }
-    axios.post(`http://localhost:5000/users/login`, data)
+    axios.post(`https://chargeit.herokuapp.com/users/login`, data)
         .then((response)=> {
           localStorage.setItem('username', response.data.user.username)
           localStorage.setItem('user_id', response.data.user.id)

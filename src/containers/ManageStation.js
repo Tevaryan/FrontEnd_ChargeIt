@@ -40,7 +40,7 @@ class ManageStation extends Component {
 
     storeStation = () => {
         axios( {
-            url: `http://localhost:5000/station/${this.state.Station}`,
+            url: `https://chargeit.herokuapp.com/station/${this.state.Station}`,
             method: "post",
           })
           .then((response)=> {
@@ -53,7 +53,7 @@ class ManageStation extends Component {
 
     storeContact = () => {
         axios( {
-            url: `http://localhost:5000/station/create/${this.state.contact}/${this.state.Station}/${this.state.location}`,
+            url: `https://chargeit.herokuapp.com/station/create/${this.state.contact}/${this.state.Station}/${this.state.location}`,
             method: "post",
           })
           .then((response)=> {

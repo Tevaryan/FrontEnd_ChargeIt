@@ -110,7 +110,7 @@ class ManageTiming extends Component {
 
     componentDidMount() {
         axios( {
-            url: `http://localhost:5000/pumps/show`,
+            url: `https://chargeit.herokuapp.com/pumps/show`,
             method: "get",
           })
           .then((response)=> {
@@ -124,7 +124,7 @@ class ManageTiming extends Component {
           });
         
         axios( {
-            url: `http://localhost:5000/station/show`,
+            url: `https://chargeit.herokuapp.com/station/show`,
             method: "get",
           })
           .then((response)=> {
@@ -138,7 +138,7 @@ class ManageTiming extends Component {
           });
         
         axios( {
-            url: `http://localhost:5000/booking/show`,
+            url: `https://chargeit.herokuapp.com/booking/show`,
             method: "get",
           })
           .then((response)=> {
@@ -154,7 +154,7 @@ class ManageTiming extends Component {
     
     storeTiming = () => {
         axios( {
-            url: `http://localhost:5000/booking/${this.state.ChosenStationId}/${this.state.ChosenPumpId}/${this.state.ChosenTiming}`,
+            url: `https://chargeit.herokuapp.com/booking/${this.state.ChosenStationId}/${this.state.ChosenPumpId}/${this.state.ChosenTiming}`,
             method: "post",
           })
           .then((response)=> {
@@ -173,7 +173,7 @@ class ManageTiming extends Component {
     
     deleteTiming = (id) => {
         axios( {
-            url: `http://localhost:5000/booking/${id}`,
+            url: `https://chargeit.herokuapp.com/booking/${id}`,
             method: "post",
           })
           .then((response)=> {
@@ -187,7 +187,7 @@ class ManageTiming extends Component {
     
     submitEdit = () => {
         axios( {
-            url: `http://localhost:5000/booking/edit/${this.state.modalBookingid}/${this.state.EditChosenTiming}`,
+            url: `https://chargeit.herokuapp.com/booking/edit/${this.state.modalBookingid}/${this.state.EditChosenTiming}`,
             method: "post",
           })
           .then((response)=> {

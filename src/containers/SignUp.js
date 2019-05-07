@@ -37,7 +37,7 @@ class SignUp extends Component {
             password:this.state.password,
           }
 
-          axios.post(`http://localhost:5000/users/new`, data)
+          axios.post(`https://chargeit.herokuapp.com/users/new`, data)
           .then((response) => {
             localStorage.setItem('username', response.data.user.username)
             localStorage.setItem('user_id', response.data.user.id)
